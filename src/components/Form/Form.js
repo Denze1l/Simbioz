@@ -13,7 +13,17 @@ class Form extends Component {
     mail: '',
     tellNumber: '',
     popUp: false,
+    itemsDropDown: '',
   };
+
+  componentDidMount() {
+    const { itemsDropDown } = this.props;
+    const chosenItem = itemsDropDown.selectThird;
+    this.setState({
+      itemsDropDown,
+      name: chosenItem,
+    });
+  }
 
   handleInput = e => {
     const nameInput = e.target.name;
@@ -64,7 +74,6 @@ class Form extends Component {
       mail,
       tellNumber,
       popUp,
-      file,
     } = this.state;
 
     let $imagePreview = null;
@@ -73,7 +82,6 @@ class Form extends Component {
     } else {
       $imagePreview = <></>;
     }
-    console.log('File:', file, 'description:', description);
 
     return (
       <>
@@ -83,13 +91,7 @@ class Form extends Component {
         >
           <h1 className={styles.Titels}> Детали заказа</h1>
           <p className={styles.description}> Название услуги*</p>
-          <input
-            className={styles.personalInfo}
-            placeholder="Заголовок с значением из последнего выбраного списка"
-            onChange={e => this.handleInput(e)}
-            value={name}
-            name="name"
-          />
+          <p className={styles.personalInfo}>{name}</p>
           <p className={styles.description}>Опишите что необходимо сделать</p>
           <textarea
             rows="5"

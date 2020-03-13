@@ -6,15 +6,31 @@ import Form from './Form/Form';
 
 class App extends Component {
   state = {
-    formActivated: true,
+    formActivated: false,
+    itemsDropDown: '',
+  };
+
+  allSelect = valueSelect => {
+    this.setState({
+      formActivated: true,
+      itemsDropDown: {
+        selectFirst: valueSelect.selectFirst.value,
+        selectSecond: valueSelect.selectSecond.value,
+        selectThird: valueSelect.selectThird.value,
+      },
+    });
   };
 
   render() {
-    const { formActivated } = this.state;
+    const { formActivated, itemsDropDown } = this.state;
     return (
       <>
         <Header />
-        {formActivated ? <Form /> : <LandingPage />}
+        {formActivated ? (
+          <Form itemsDropDown={itemsDropDown} />
+        ) : (
+          <LandingPage allSelect={this.allSelect} />
+        )}
         <Footer />
       </>
     );

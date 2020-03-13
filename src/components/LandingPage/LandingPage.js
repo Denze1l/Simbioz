@@ -1,10 +1,39 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
 import styles from './styles.module.css';
+import dropDown from './dropDown.json';
 
 class LandingPage extends Component {
-  state = {};
+  state = {
+    selectFirst: '',
+    selectSecond: '',
+    selectThird: '',
+  };
+
+  handleSelectOne = e => {
+    this.setState({
+      selectFirst: e,
+      selectSecond: '',
+      selectThird: '',
+    });
+  };
+
+  handleSelectSecond = e => {
+    this.setState({
+      selectSecond: e,
+      selectThird: '',
+    });
+  };
+
+  handleSelectThird = e => {
+    const { allSelect } = this.props;
+
+    this.setState({ selectThird: e }, () => allSelect(this.state));
+  };
 
   render() {
+    const { selectFirst, selectSecond } = this.state;
+
     return (
       <section className={styles.LandPage}>
         <h1 className={styles.Title}>
@@ -14,6 +43,47 @@ class LandingPage extends Component {
         <h2 className={styles.Subtitle}>
           Выбирайте услугу и оформляйте заявку в несколько кликов
         </h2>
+
+        <Select
+          className={styles.dropDown}
+          onChange={e => this.handleSelectOne(e)}
+          placeholder="Выберите тип услуги"
+          options={dropDown.map((option, index) => ({
+            value: option.name,
+            label: option.name,
+            select: index,
+          }))}
+        />
+        {selectFirst && (
+          <Select
+            value={this.state.selectSecond}
+            className={styles.dropDown}
+            onChange={e => this.handleSelectSecond(e)}
+            placeholder="Выберите подвид"
+            options={dropDown[selectFirst.select].children.map(
+              (option, index) => ({
+                value: option.name,
+                label: option.name,
+                select: index,
+              }),
+            )}
+          />
+        )}
+        {selectSecond && (
+          <Select
+            value={this.state.selectThird}
+            className={styles.dropDown}
+            onChange={e => this.handleSelectThird(e)}
+            placeholder="Выберите услугу"
+            options={dropDown[selectFirst.select].children[
+              selectSecond.select
+            ].nephews.map((option, index) => ({
+              value: option.name,
+              label: option.name,
+              select: index,
+            }))}
+          />
+        )}
       </section>
     );
   }
