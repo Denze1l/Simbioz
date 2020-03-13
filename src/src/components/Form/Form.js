@@ -15,26 +15,49 @@ class Form extends Component {
     popUp: false,
   };
 
-  handleInput = e => {
-    const nameInput = e.target.name;
+  handleInputName = e => {
     this.setState({
-      [nameInput]: e.target.value,
+      name: e.target.value,
+    });
+  };
+
+  handleInputDescription = e => {
+    this.setState({
+      description: e.target.value,
     });
   };
 
   handleImageChange = e => {
     e.preventDefault();
 
-    const reader = new FileReader();
-    const file = e.target.files[0];
+    let reader = new FileReader();
+    let file = e.target.files[0];
 
     reader.onloadend = () => {
       this.setState({
-        file,
+        file: file,
         imagePreviewUrl: reader.result,
       });
     };
     reader.readAsDataURL(file);
+  };
+
+  handleInputFistLastName = e => {
+    this.setState({
+      firstLastName: e.target.value,
+    });
+  };
+
+  handleInputMail = e => {
+    this.setState({
+      mail: e.target.value,
+    });
+  };
+
+  handleInputTellNumber = e => {
+    this.setState({
+      tellNumber: e.target.value,
+    });
   };
 
   handleSubmit(e) {
@@ -64,7 +87,6 @@ class Form extends Component {
       mail,
       tellNumber,
       popUp,
-      file,
     } = this.state;
 
     let $imagePreview = null;
@@ -73,7 +95,6 @@ class Form extends Component {
     } else {
       $imagePreview = <></>;
     }
-    console.log('File:', file, 'description:', description);
 
     return (
       <>
@@ -81,23 +102,22 @@ class Form extends Component {
           className={styles.FormSeaction}
           onSubmit={e => this.handleSubmit(e)}
         >
-          <h1 className={styles.Titels}> Детали заказа</h1>
+          ><h1 className={styles.Titels}> Детали заказа</h1>
           <p className={styles.description}> Название услуги*</p>
           <input
             className={styles.personalInfo}
             placeholder="Заголовок с значением из последнего выбраного списка"
-            onChange={e => this.handleInput(e)}
+            onChange={e => this.handleInputName(e)}
             value={name}
-            name="name"
+          />
           />
           <p className={styles.description}>Опишите что необходимо сделать</p>
           <textarea
             rows="5"
             className={styles.personalInfo}
             placeholder="Текстовое поле для ввода"
-            onChange={e => this.handleInput(e)}
+            onChange={e => this.handleInputDescription(e)}
             value={description}
-            name="description"
           />
           <div className="wrap_img_add">
             <span id="outputMulti" />
@@ -112,27 +132,24 @@ class Form extends Component {
           <input
             className={styles.personalInfo}
             placeholder="Имя и фамилия"
-            onChange={e => this.handleInput(e)}
+            onChange={e => this.handleInputFistLastName(e)}
             value={firstLastName}
-            name="firstLastName"
           />
           <p className={styles.description}>Ваш Email*</p>
           <input
             className={styles.personalInfo}
             placeholder="Электронная почта"
-            onChange={e => this.handleInput(e)}
+            onChange={e => this.handleInputMail(e)}
             value={mail}
             type="email"
-            name="mail"
           />
           <p className={styles.description}>Ваш номер телефона*</p>
           <input
             className={styles.personalInfo}
             placeholder="Мобильный номер телефона"
-            onChange={e => this.handleInput(e)}
+            onChange={e => this.handleInputTellNumber(e)}
             value={tellNumber}
             type="tel"
-            name="tellNumber"
           />
           <button type="submit" className={styles.confirmButton}>
             Отправить Заявку
