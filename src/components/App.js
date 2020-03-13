@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import LandingPage from './LandingPage/LandingPage';
 import Form from './Form/Form';
+import PopUp from './PopUp/PopUp';
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
       <>
         <Header />
         {formActivated ? <Form /> : <LandingPage />}
+        <PopUp />
         <Footer />
       </>
     );
