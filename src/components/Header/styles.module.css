@@ -1,0 +1,134 @@
+.Header {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 20px;
+}
+
+.Header::after {
+  display: block;
+  content: '';
+  background-color: #132e45;
+  height: 14px;
+  width: 100%;
+}
+.Title {
+  color: #333652;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 30px;
+  font-family: serif;
+}
+
+.Title::before {
+  content: '';
+  margin-right: 10px;
+  margin-bottom: -10px;
+  width: 34px;
+  height: 42px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../../assets/images/Лого.PNG);
+}
+
+.buregerButton {
+  position: fixed;
+  outline: none;
+  width: 50px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid #2a2a2a;
+  display: block;
+  background-color: white;
+  right: 15px;
+  top: 15px;
+  z-index: 10;
+}
+
+.burgerLines,
+.burgerLines::after,
+.burgerLines::before {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: #2a2a2a;
+}
+
+.burgerLines {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.burgerLines::before {
+  content: '';
+  top: -10px;
+  left: 0px;
+}
+
+.burgerLines::after {
+  content: '';
+  top: 10px;
+  left: 0px;
+}
+
+.burgerList {
+  padding-top: 80px;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #2a2a2a;
+  overflow-y: auto;
+  right: 0;
+}
+
+.burgerLink {
+  padding: 15px;
+  font-family: serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.burgerLink:hover {
+  filter: brightness(0.7);
+}
+
+@media (min-width: 768px) {
+  .Header {
+    text-align: center;
+  }
+  .tableLink {
+    color: #337ab7;
+    background-color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #5d9cd2;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .tableLink:hover {
+    color: rgb(250, 135, 3);
+  }
+
+  .tableLink:first-child {
+    margin-right: 20px;
+  }
+
+  .tableList {
+    display: inline-block;
+  }
+  .Title {
+    display: inline-block;
+    padding-right: 250px;
+  }
+}
