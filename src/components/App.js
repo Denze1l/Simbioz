@@ -7,7 +7,7 @@ import Form from './Form/Form';
 class App extends Component {
   state = {
     formActivated: false,
-    itemsDropDown: {},
+    itemsDropDown: '',
   };
 
   allSelect = valueSelect => {
@@ -25,7 +25,7 @@ class App extends Component {
     const { formActivated, itemsDropDown } = this.state;
     return (
       <>
-        <Header />
+        <Header formActivated={formActivated} />
         {formActivated ? (
           <Form itemsDropDown={itemsDropDown} />
         ) : (

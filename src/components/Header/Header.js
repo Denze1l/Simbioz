@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 
@@ -13,13 +14,23 @@ class Header extends Component {
     });
   };
 
+  handleChange = () => {
+    console.log('hi');
+  };
+
   render() {
     const { burgerActive } = this.state;
     const devicewidth = document.documentElement.clientWidth;
     const tabletwidth = 768;
     return (
       <section className={styles.Header}>
-        <h1 className={styles.Title}>simbioz</h1>
+        <h1
+          onClick={this.handleChange}
+          onKeyDown={this.handleChange}
+          className={styles.Title}
+        >
+          simbioz
+        </h1>
         {devicewidth < tabletwidth && (
           <button
             type="button"

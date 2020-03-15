@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 import dropDown from './dropDown.json';
 
@@ -88,5 +89,9 @@ class LandingPage extends Component {
     );
   }
 }
+
+LandingPage.propTypes = {
+  allSelect: PropTypes.func.isRequired,
+};
 
 export default LandingPage;
