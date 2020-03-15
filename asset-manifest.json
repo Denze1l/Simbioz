@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/simbioz/static/css/main.7a849a64.chunk.css",
+    "main.js": "/simbioz/static/js/main.ee77ff33.chunk.js",
+    "main.js.map": "/simbioz/static/js/main.ee77ff33.chunk.js.map",
+    "runtime-main.js": "/simbioz/static/js/runtime-main.1b0ce5c1.js",
+    "runtime-main.js.map": "/simbioz/static/js/runtime-main.1b0ce5c1.js.map",
+    "static/js/2.e0d7c05f.chunk.js": "/simbioz/static/js/2.e0d7c05f.chunk.js",
+    "static/js/2.e0d7c05f.chunk.js.map": "/simbioz/static/js/2.e0d7c05f.chunk.js.map",
+    "index.html": "/simbioz/index.html",
+    "precache-manifest.85a693129ac2753abf62ca12ef42b3df.js": "/simbioz/precache-manifest.85a693129ac2753abf62ca12ef42b3df.js",
+    "service-worker.js": "/simbioz/service-worker.js",
+    "static/css/main.7a849a64.chunk.css.map": "/simbioz/static/css/main.7a849a64.chunk.css.map",
+    "static/media/styles.module.css": "/simbioz/static/media/Лого.448f8d4e.PNG"
+  }
+}
