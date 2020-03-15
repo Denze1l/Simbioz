@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/simbioz/static/css/main.7a849a64.chunk.css",
-    "main.js": "/simbioz/static/js/main.ee77ff33.chunk.js",
-    "main.js.map": "/simbioz/static/js/main.ee77ff33.chunk.js.map",
-    "runtime-main.js": "/simbioz/static/js/runtime-main.1b0ce5c1.js",
-    "runtime-main.js.map": "/simbioz/static/js/runtime-main.1b0ce5c1.js.map",
-    "static/js/2.e0d7c05f.chunk.js": "/simbioz/static/js/2.e0d7c05f.chunk.js",
-    "static/js/2.e0d7c05f.chunk.js.map": "/simbioz/static/js/2.e0d7c05f.chunk.js.map",
+    "main.css": "/simbioz/static/css/main.3c04fd16.chunk.css",
+    "main.js": "/simbioz/static/js/main.411df233.chunk.js",
+    "main.js.map": "/simbioz/static/js/main.411df233.chunk.js.map",
+    "runtime-main.js": "/simbioz/static/js/runtime-main.a62de8f1.js",
+    "runtime-main.js.map": "/simbioz/static/js/runtime-main.a62de8f1.js.map",
+    "static/js/2.302a29ca.chunk.js": "/simbioz/static/js/2.302a29ca.chunk.js",
+    "static/js/2.302a29ca.chunk.js.map": "/simbioz/static/js/2.302a29ca.chunk.js.map",
     "index.html": "/simbioz/index.html",
-    "precache-manifest.85a693129ac2753abf62ca12ef42b3df.js": "/simbioz/precache-manifest.85a693129ac2753abf62ca12ef42b3df.js",
+    "precache-manifest.7f65af2a426f236cac511437569c4ea7.js": "/simbioz/precache-manifest.7f65af2a426f236cac511437569c4ea7.js",
     "service-worker.js": "/simbioz/service-worker.js",
-    "static/css/main.7a849a64.chunk.css.map": "/simbioz/static/css/main.7a849a64.chunk.css.map",
+    "static/css/main.3c04fd16.chunk.css.map": "/simbioz/static/css/main.3c04fd16.chunk.css.map",
     "static/media/styles.module.css": "/simbioz/static/media/Лого.448f8d4e.PNG"
   }
 }
