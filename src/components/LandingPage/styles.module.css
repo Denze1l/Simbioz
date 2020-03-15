@@ -37,6 +37,20 @@
 
 @media (min-width: 768px) {
   .Title {
-    width: 510px;
+    width: 620px;
+    font-size: 22px;
+    padding: 50px 0px;
+    line-height: 1.6;
+  }
+
+  .Subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    padding-bottom: 30px;
+  }
+
+  .dropDown {
+    width: 500px;
+    padding-bottom: 50px;
   }
 }
