@@ -7,7 +7,11 @@ import Form from './Form/Form';
 class App extends Component {
   state = {
     formActivated: false,
-    itemsDropDown: '',
+    itemsDropDown: {
+      selectFirst: '',
+      selectSecond: '',
+      selectThird: '',
+    },
   };
 
   allSelect = valueSelect => {

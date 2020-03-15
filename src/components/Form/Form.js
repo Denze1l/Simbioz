@@ -47,6 +47,14 @@ class Form extends Component {
     reader.readAsDataURL(file);
   };
 
+  clickClosePopUp = e => {
+    if (e.target === e.currentTarget) {
+      this.setState({
+        popUp: false,
+      });
+    }
+  };
+
   handleSubmit(e) {
     e.preventDefault();
     const { name, firstLastName, mail, tellNumber } = this.state;
@@ -57,12 +65,6 @@ class Form extends Component {
         popUp: true,
       });
     }
-  }
-
-  clickClosePopUp() {
-    this.setState({
-      popUp: false,
-    });
   }
 
   render() {
@@ -147,6 +149,10 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  itemsDropDown: PropTypes.string.isRequired,
+  itemsDropDown: PropTypes.shape({
+    selectFirst: PropTypes.string,
+    selectSecond: PropTypes.string,
+    selectThird: PropTypes.string.isRequired,
+  }).isRequired,
 };
 export default Form;

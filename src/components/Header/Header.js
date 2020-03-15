@@ -52,7 +52,7 @@ class Header extends Component {
           </div>
         )}
         {burgerActive && (
-          <div className={styles.burgerList}>
+          <div role="toolbar" className={styles.burgerList}>
             <a href="https://simbioz.ua/cont" className={styles.burgerLink}>
               Сотрудничество
             </a>

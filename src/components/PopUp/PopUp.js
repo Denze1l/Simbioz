@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import style from './PopUp.module.css';
 
 class PopUp extends Component {
@@ -19,7 +20,11 @@ class PopUp extends Component {
         <div className={style.modal}>
           <h2 className={style.Title}>Уведомление</h2>
           <p className={style.warning}>Вы не заполнили обязательные поля</p>
-          <button className={style.okButt} onClick={clickClosePopUp}>
+          <button
+            type="submit"
+            className={style.okButt}
+            onClick={clickClosePopUp}
+          >
             Ок
           </button>
         </div>
@@ -27,5 +32,7 @@ class PopUp extends Component {
     );
   }
 }
-
+PopUp.propTypes = {
+  clickClosePopUp: PropTypes.func.isRequired,
+};
 export default PopUp;
