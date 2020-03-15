@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 class Header extends Component {
@@ -14,19 +15,17 @@ class Header extends Component {
     });
   };
 
-  handleChange = () => {
-    console.log('hi');
-  };
-
   render() {
     const { burgerActive } = this.state;
+    const { formActivated } = this.props;
     const devicewidth = document.documentElement.clientWidth;
     const tabletwidth = 768;
+
     return (
       <section className={styles.Header}>
         <h1
-          onClick={this.handleChange}
-          onKeyDown={this.handleChange}
+          onClick={formActivated}
+          onKeyPress={this.handleKeyPress}
           className={styles.Title}
         >
           simbioz
@@ -34,7 +33,9 @@ class Header extends Component {
         {devicewidth < tabletwidth && (
           <button
             type="button"
-            className={styles.buregerButton}
+            className={
+              burgerActive ? styles.buregerButtonActive : styles.buregerButton
+            }
             onClick={this.BurgerFunk}
           >
             <span className={styles.burgerLines} />
@@ -67,5 +68,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  formActivated: PropTypes.func.isRequired,
+};
 
 export default Header;

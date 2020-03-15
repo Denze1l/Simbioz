@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import PopUp from '../PopUp/PopUp';
 import styles from './Form.module.css';
 
@@ -146,4 +146,7 @@ class Form extends Component {
   }
 }
 
+Form.propTypes = {
+  itemsDropDown: PropTypes.string.isRequired,
+};
 export default Form;

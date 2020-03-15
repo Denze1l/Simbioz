@@ -21,11 +21,15 @@ class App extends Component {
     });
   };
 
+  returntoLP = () => {
+    this.setState({ formActivated: false });
+  };
+
   render() {
     const { formActivated, itemsDropDown } = this.state;
     return (
       <>
-        <Header formActivated={formActivated} />
+        <Header formActivated={this.returntoLP} />
         {formActivated ? (
           <Form itemsDropDown={itemsDropDown} />
         ) : (
