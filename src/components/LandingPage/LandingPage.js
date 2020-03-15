@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 import dropDown from './dropDown.json';
 
@@ -32,7 +33,7 @@ class LandingPage extends Component {
   };
 
   render() {
-    const { selectFirst, selectSecond } = this.state;
+    const { selectFirst, selectSecond, selectThird } = this.state;
 
     return (
       <section className={styles.LandPage}>
@@ -56,7 +57,7 @@ class LandingPage extends Component {
         />
         {selectFirst && (
           <Select
-            value={this.state.selectSecond}
+            value={selectSecond}
             className={styles.dropDown}
             onChange={e => this.handleSelectSecond(e)}
             placeholder="Выберите подвид"
@@ -71,7 +72,7 @@ class LandingPage extends Component {
         )}
         {selectSecond && (
           <Select
-            value={this.state.selectThird}
+            value={selectThird}
             className={styles.dropDown}
             onChange={e => this.handleSelectThird(e)}
             placeholder="Выберите услугу"
@@ -88,5 +89,9 @@ class LandingPage extends Component {
     );
   }
 }
+
+LandingPage.propTypes = {
+  allSelect: PropTypes.func.isRequired,
+};
 
 export default LandingPage;

@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 class Header extends Component {
@@ -15,15 +17,25 @@ class Header extends Component {
 
   render() {
     const { burgerActive } = this.state;
+    const { formActivated } = this.props;
     const devicewidth = document.documentElement.clientWidth;
     const tabletwidth = 768;
+
     return (
       <section className={styles.Header}>
-        <h1 className={styles.Title}>simbioz</h1>
+        <h1
+          onClick={formActivated}
+          onKeyPress={this.handleKeyPress}
+          className={styles.Title}
+        >
+          simbioz
+        </h1>
         {devicewidth < tabletwidth && (
           <button
             type="button"
-            className={styles.buregerButton}
+            className={
+              burgerActive ? styles.buregerButtonActive : styles.buregerButton
+            }
             onClick={this.BurgerFunk}
           >
             <span className={styles.burgerLines} />
@@ -40,7 +52,7 @@ class Header extends Component {
           </div>
         )}
         {burgerActive && (
-          <div className={styles.burgerList}>
+          <div role="toolbar" className={styles.burgerList}>
             <a href="https://simbioz.ua/cont" className={styles.burgerLink}>
               Сотрудничество
             </a>
@@ -56,5 +68,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  formActivated: PropTypes.func.isRequired,
+};
 
 export default Header;

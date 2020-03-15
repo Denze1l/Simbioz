@@ -7,7 +7,11 @@ import Form from './Form/Form';
 class App extends Component {
   state = {
     formActivated: false,
-    itemsDropDown: '',
+    itemsDropDown: {
+      selectFirst: '',
+      selectSecond: '',
+      selectThird: '',
+    },
   };
 
   allSelect = valueSelect => {
@@ -21,11 +25,15 @@ class App extends Component {
     });
   };
 
+  returntoLP = () => {
+    this.setState({ formActivated: false });
+  };
+
   render() {
     const { formActivated, itemsDropDown } = this.state;
     return (
       <>
-        <Header />
+        <Header formActivated={this.returntoLP} />
         {formActivated ? (
           <Form itemsDropDown={itemsDropDown} />
         ) : (

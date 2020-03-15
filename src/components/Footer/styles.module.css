@@ -72,16 +72,20 @@
   .telephoneDiv,
   .meilDiv {
     width: 50%;
-    padding: 20px 60px;
+    font-size: 18px;
+    padding: 40px 80px 30px;
   }
 
   .forMobile::after {
-    width: 32px;
-    height: 32px;
-    margin-top: -20px;
+    width: 50px;
+    height: 50px;
+    margin-top: -30px;
   }
   .forMeil::before {
-    margin-left: -45px;
+    margin-left: -60px;
+    margin-top: -30px;
+    width: 50px;
+    height: 50px;
   }
   .divWithLinks {
     display: flex;
@@ -90,6 +94,8 @@
     align-items: stretch;
   }
   .divWithLinks p {
-    padding-bottom: 0px;
+    padding: 22px 0px;
+    font-size: 20px;
+    text-align: center;
   }
 }
